@@ -1,0 +1,62 @@
+const restaurant = [
+    {
+        id: 1,
+        name: 'هوانا',
+        description: 'مطعم اللقمة الطيبة والقعدة الهنية',
+        restaurantImg: '',
+        categorys: {
+            1: {
+                name: 'سلطات',
+                description: 'سلطات شرقيه',
+                categoryImg: 'url()',
+                types: {
+                    1: {
+                        name: 'فتوش',
+                        description: 'أطيب فتوش',
+                        typeImg: 'url()',
+                        prices: {
+                            1: {
+                                info: 'حجم صغير',
+                                price: '7000 sp'
+                            },
+                            2: {
+                                info: '',
+                                price: '10000 sp'
+                            },
+                            3: {
+                                info: '',
+                                price: '12000 sp'
+                            }
+                        }
+                    }
+                }
+            },
+            2: {
+                name: 'سلطات',
+                description: 'سلطات شرقيه',
+                categoryImg: 'url()',
+                types: {
+                    1: {
+                        name: 'فتوش',
+                        description: 'أطيب فتوش',
+                        typeImg: 'url()',
+                        prices: {
+                            1: {
+                                info: 'حجم صغير',
+                                price: '7000 sp'
+                            },
+                            2: {
+                                info: '',
+                                price: '10000 sp'
+                            },
+                            3: {
+                                info: '',
+                                price: '12000 sp'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+]
