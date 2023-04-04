@@ -9,6 +9,12 @@ const categorySchema = new mongoose.Schema({
         minlength: 3,
         maxlingth: 50,
     },
+    image: {
+        type: String,
+        minlength: 3,
+        maxlinght: 50,
+        required: true
+    },
     restaurantId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Restaurant',
@@ -21,6 +27,7 @@ const Category = mongoose.model('Category', categorySchema);
 function validateCategory(category) {
     const schema = {
         name: Joi.string().min(3).max(50).required(),
+        image: Joi.string().min(3).max(50).required(),
         restaurantId: Joi.objectId().required()
     }
 
