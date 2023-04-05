@@ -1,3 +1,0 @@
-<template>
-    <h1>Add Restaurant</h1>
-</template>

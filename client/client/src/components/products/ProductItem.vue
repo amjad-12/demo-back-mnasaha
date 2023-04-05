@@ -35,6 +35,7 @@ li {
   border: 1px solid #424242;
   border-radius: 12px;
   padding: 1rem;
+  padding-left: 100px;
   color: rgb(77, 77, 77);
 
 }

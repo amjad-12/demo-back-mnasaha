@@ -2,14 +2,14 @@
     <div>
         <base-card>
             <div class="controls">
-                <base-button mode="outline">تحديث</base-button>
+                <base-button mode="outline" @click="loadRestaurants">تحديث</base-button>
                 <base-button link to="/addRestaurant">أضف مطعمك</base-button>
             </div>
             <ul v-if="hasRestaurants">
                 <restaurant-item 
                     v-for="restaurant in restaurantsList" 
-                    :key="restaurant.id" 
-                    :id="restaurant.id"
+                    :key="restaurant._id" 
+                    :id="restaurant._id"
                     :name="restaurant.name"
                     :description="restaurant.description"
                     :stars="restaurant.stars"
@@ -35,8 +35,8 @@ ul {
 </style>
 
 <script>
-import RestaurantItem from '../components/RestaurantItem.vue';
-import BaseButton from '../components/ui/BaseButton.vue';
+import RestaurantItem from '../../components/restaurants/RestaurantItem.vue';
+import BaseButton from '../../components/ui/BaseButton.vue';
 
 export default {
     components: {
@@ -49,6 +49,14 @@ export default {
         },
         hasRestaurants() {
             return this.$store.getters['restaurants/hasRestaurants']
+        }
+    },
+    created() {
+        this.loadRestaurants()
+    },
+    methods: {
+        loadRestaurants() {
+            this.$store.dispatch('restaurants/loadRestaurants')
         }
     }
 }

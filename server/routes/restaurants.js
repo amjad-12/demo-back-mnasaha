@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 router.get('/:resId/categorys',async (req, res) => {
     const categorys = await Category
         .find({ restaurantId: req.params.resId})
-        .populate('restaurantId', 'name image description -_id')
+        .populate('restaurantId', '_id')
     res.send(categorys)
 })
 
@@ -64,6 +64,7 @@ router.get('/:resId/categorys/:catId/products', async (req, res) => {
                path: "restaurantId", // in blogs, populate comments
             }
          })
+    
         // .populate('categoryId', 'name image restaurantId -_id')
     res.send(products)
 })

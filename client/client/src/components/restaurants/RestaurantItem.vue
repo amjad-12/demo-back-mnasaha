@@ -6,7 +6,8 @@
             <h5>{{ starsNumber }}</h5>
         </div>
         <div class="actions">
-            <base-button link :to="RestaurantCategorysLink">قائمة الطعام</base-button>
+                <!-- <router-view></router-view> -->
+                <base-button link :to="RestaurantCategorysLink">قائمة الطعام</base-button>        
         </div>
     </li>
 </template>
@@ -21,7 +22,7 @@ export default {
         },
         starsNumber() {
           const shape = '⭐'
-          const finalShape = shape.repeat(2)
+          const finalShape = shape.repeat(this.stars)
           return finalShape
         }
     }
@@ -74,6 +75,7 @@ div {
 
 .actions {
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
 }
 </style>
